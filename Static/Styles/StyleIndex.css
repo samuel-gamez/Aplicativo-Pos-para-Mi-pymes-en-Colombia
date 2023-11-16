@@ -1,0 +1,73 @@
+:root {
+    --color-primary: #6B5B95;        
+    --color-secondary: #A2D5C6;      
+    --color-background: #CBAACB;     
+    --color-text: #E0E0E0;           
+    --color-button-hover: #6B5B95;   
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--color-background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-container {
+    box-shadow: 0px 0px 27px 0px rgb(68, 57, 78);
+    background-color: var(--color-text);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    height: 40vh;
+    width: 20vw;
+    text-align: center;
+}
+
+h2 {
+    color: var(--color-primary);
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    color: var(--color-primary);
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid var(--color-primary);
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    background-color: var(--color-primary);
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: var(--color-secondary);
+}
+
+button:active{
+    transform: translateY(3px);
+}
+
+.message {
+    color: var(--color-primary);
+    margin-top: 10px;
+}

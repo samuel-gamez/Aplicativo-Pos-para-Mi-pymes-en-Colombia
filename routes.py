@@ -27,6 +27,9 @@ def login():
 def Registro():
     return render_template('Registro.html')
 
+@app.route('/404')
+def Error():
+    return render_template('404.html')
 
 @app.route('/Inicio')
 def Inicio():

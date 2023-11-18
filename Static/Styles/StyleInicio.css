@@ -19,11 +19,54 @@ body{
     display: flex;
     justify-content: space-around;
 }
+.menu_hamburguesa {
+    margin-top: .5%;
+    margin-right: 0px;
+    background-color: var(--color-primary);
+    width: 40px; 
+    height: 40px;
+}
 
+.menu_hamburguesa img {
+    width: 100%; 
+    height: auto;
+    filter: invert(100%);
+}
+
+.opciones ul {
+    display: none;
+    position: absolute;
+    background-color: var(--color-primary);
+    width: 200px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.opciones ul.show {
+    display: block;
+}
+
+.opciones ul li:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+}
+
+.opciones ul li {
+    padding: 15px;
+    text-align: center;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.menu_abierto {
+    transition: margin-left 0.5s ease-in-out;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
 .container_1{
     display: flex;
     flex-direction: column;
-    margin-top: 10px;
+    margin-top: .5%;
     width: 58%;
     height: 500px;
 }
@@ -126,7 +169,7 @@ nav button img{
     align-items: center;
     justify-content: space-around;
     margin-top: 10px;
-    width: 40%;
+    width: 20%;
     height: 740px;
     background-color: rgb(255, 255, 255);
     box-shadow: 0px 0px 27px 0px rgb(68, 57, 78);

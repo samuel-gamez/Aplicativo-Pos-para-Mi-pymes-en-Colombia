@@ -58,6 +58,16 @@ body{
     height: 40px;
 }
 
+.form_1 select{
+    outline: none;
+    background: none;
+    color: var(--color-primary);
+    border: none;
+    border-bottom: 2px solid var(--color-primary);
+    width: 80%;
+    height: 40px;
+}
+
 .form_2 label{
     color: var(--color-primary);
 }

@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify
-from Models.Login import Usuario
+from Models.Users import Usuario
 
 app = Flask(__name__)
 app.secret_key = 'random'
@@ -23,8 +23,25 @@ def login():
     return render_template('Index.html')
 
 
-@app.route('/Registro')
+@app.route('/Registro', methods=['GET', 'POST'])
 def Registro():
+    if request.method == 'POST':
+        # Lógica para procesar el formulario de registro
+        usu_nom = request.form['usu_nom']
+        usu_apep = request.form['usu_apep']
+        usu_apem = request.form['usu_apem']
+        usu_ced = request.form['usu_ced']
+        usu_tel = request.form['usu_tel']
+        usu_sex = request.form['usu_sex']
+        usu_correo = request.form['usu_correo']
+        usu_password = request.form['usu_password']
+
+        usuario_model = Usuario()
+        if usuario_model.registro(usu_nom, usu_apep, usu_apem, usu_ced, usu_tel, usu_sex, usu_correo, usu_password):
+            return jsonify({'redirect': url_for('login')})
+        else:
+            return jsonify({'redirect': url_for('login')})  
+
     return render_template('Registro.html')
 
 @app.route('/404')

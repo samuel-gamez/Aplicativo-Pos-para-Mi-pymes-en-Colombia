@@ -3,100 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='Styles/StyleInicio.css') }}">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <title>Inicio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Styles/StyleRegistro.css') }}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="{{ url_for('static', filename='js/Inicio.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/Users.js') }}"></script>
+    <title>Registro</title>
+    <script type="text/javascript">
+        var registro_url = "{{ url_for('Registro') }}";
+    </script>
 </head>
 <body>
-    <div class="menu_hamburguesa">
-        <img src="{{ url_for('static', filename='Image/menu.png') }}">
-        <Section>
-            <div class="opciones">
-                <ul>
-                    <li>Recaudo</li>
-                    <li>Listado de facturas</li>
-                    <li>Ventas por cliente</li>
-                    <li>Cuadre de caja</li>
-                    <li>Movimiento de caja</li>
-                    <li>Comprobante informe diario</li>
-                    <li>Ventas por producto</li>
-                </ul>
-            </div>
-        </Section>
-    </div>
-    <div class="container_1">
-        <nav>
-            <input type="text" placeholder="Buscar">
-            <button>
-                <img src="{{ url_for('static', filename='Image/Lupa.png') }}">
-            </button>
-        </nav>
+    <div class="container">
+        <p>Sign Up</p>
+        <form class="form_1">
+            <input type="text" placeholder="Nombre" id="usu_nom" name="usu_nom">
+            <input type="text" placeholder="Apellido Paterno" id="usu_apep" name="usu_apep">
+            <input type="text" placeholder="Apellido Materno" id="usu_apem" name="usu_apem">
+            <input type="text" placeholder="Cedula" name="usu_ced" id="usu_ced">
+            <input type="text" placeholder="Telefono" name="usu_tel" id="usu_tel">
+            <select name="usu_sex" id="usu_sex" required>
+                <option value="" disabled selected>Selecciona...</option>
+                <option value="M">Masculino</option>
+                <option value="F">Femenino</option>
+                <option value="O">Otro</option>
+            </select>
+            <input type="email" placeholder="Correo Electronico" name="usu_correo" id="usu_correo">
+            <input type="password" placeholder="Contraseña" name="usu_password" id="usu_password">
+            <!-- <input type="password" placeholder="Confirma tu contraseña"> -->
+        </form>
+        <form class="form_2">
+            <input type="checkbox" name="veificacion">
+            <label for="veificacion">Acepto terminos y condiciones</label>
+        </form>
 
-        <section>
-            <div class="fila_1">
-                <div>
-                    <p>producto 1</p>
-                </div>
-                <div>
-                    <p>producto 2</p>
-                </div> 
-                <div>
-                    <p>producto 3</p>
-                </div> 
-                <div>
-                    <p>producto 4</p>
-                </div> 
-                <div>
-                    <p>producto 5</p>
-                </div>
-            </div>
-
-            <div class="fila_2">
-                <div>
-                    <p>producto 6</p>
-                </div>
-                <div>
-                    <p>producto 7</p>
-                </div> 
-                <div>
-                    <p>producto 8</p>
-                </div> 
-                <div>
-                    <p>producto 9</p>
-                </div> 
-                <div>
-                    <p>producto 10</p>
-                </div>
-            </div>
-        </section>
-    </div>
-
-
-    <div class="container_2">
-        <p>Facturar</p>
-
-        <section>
-            <div><p>Producto 1</p></div>
-            <div><p>Producto 2</p></div>
-            <div><p>Producto 3</p></div>
-            <div><p>Producto 4</p></div>
-            <div><p>Producto 5</p></div>
-            <div><p>Producto 6</p></div>
-            <div><p>Producto 6</p></div>
-            <div><p>Producto 6</p></div>
-            <div><p>Producto 6</p></div>
-            <div><p>Producto 6</p></div>
-            <div><p>Producto 6</p></div>
-            <div><p>Producto 6</p></div>
-        </section>
-
-        <button>
-            <p>Pagar</p>
-        </button>
-
+        <button id="registroButton">Registrarse</button>
     </div>
 </body>
 </html>

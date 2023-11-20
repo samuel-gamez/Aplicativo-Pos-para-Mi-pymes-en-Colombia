@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='Styles/StyleInicio.css') }}">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/style/buscador.css">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <title>Inicio</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -29,74 +30,55 @@
     </div>
     <div class="container_1">
         <nav>
-            <input type="text" placeholder="Buscar">
-            <button>
-                <img src="{{ url_for('static', filename='Image/Lupa.png') }}">
-            </button>
+          <input type="text" id="searchInput" placeholder="Buscar">
+          <button onclick="buscar()">
+            <img src="{{ url_for('static', filename='Image/Lupa.png') }}">
+          </button>
         </nav>
-
+    
         <section>
-            <div class="fila_1">
-                <div>
-                    <p>producto 1</p>
-                </div>
-                <div>
-                    <p>producto 2</p>
-                </div> 
-                <div>
-                    <p>producto 3</p>
-                </div> 
-                <div>
-                    <p>producto 4</p>
-                </div> 
-                <div>
-                    <p>producto 5</p>
-                </div>
-            </div>
-
-            <div class="fila_2">
-                <div>
-                    <p>producto 6</p>
-                </div>
-                <div>
-                    <p>producto 7</p>
-                </div> 
-                <div>
-                    <p>producto 8</p>
-                </div> 
-                <div>
-                    <p>producto 9</p>
-                </div> 
-                <div>
-                    <p>producto 10</p>
-                </div>
-            </div>
+          <div class="fila_1">
+            <div><p>producto 1</p></div>
+            <div><p>producto 2</p></div> 
+            <div><p>producto 3</p></div> 
+            <div><p>producto 4</p></div> 
+            <div><p>producto 5</p></div>
+          </div>
+    
+          <div class="fila_2">
+            <div><p>producto 6</p></div>
+            <div><p>producto 7</p></div> 
+            <div><p>producto 8</p></div> 
+            <div><p>producto 9</p></div> 
+            <div><p>producto 10</p></div>
+          </div>
         </section>
-    </div>
-
-
-    <div class="container_2">
+      </div>
+    
+      <div class="container_2">
         <p>Facturar</p>
-
-        <section>
-            <div><p>Producto 1</p></div>
-            <div><p>Producto 2</p></div>
-            <div><p>Producto 3</p></div>
-            <div><p>Producto 4</p></div>
-            <div><p>Producto 5</p></div>
-            <div><p>Producto 6</p></div>
-            <div><p>Producto 6</p></div>
-            <div><p>Producto 6</p></div>
-            <div><p>Producto 6</p></div>
-            <div><p>Producto 6</p></div>
-            <div><p>Producto 6</p></div>
-            <div><p>Producto 6</p></div>
+        <section id="resultadosContainer">
         </section>
-
+    
         <button>
-            <p>Pagar</p>
+          <p>Pagar</p>
         </button>
-
-    </div>
+      </div>
+    
+      <script>
+        function buscar() {
+          var query = document.getElementById("searchInput").value.toLowerCase();
+          var productos = document.querySelectorAll('.container_1 section div p');
+          var resultados = [];
+          productos.forEach(function (producto) {
+            var nombreProducto = producto.innerText.toLowerCase();
+            if (nombreProducto.includes(query)) {
+              resultados.push('<div><p>' + nombreProducto + '</p></div>');
+            }
+          });
+          var resultadosContainer = document.getElementById("resultadosContainer");
+          resultadosContainer.innerHTML = resultados.join('');
+        }
+      </script>
 </body>
 </html>
